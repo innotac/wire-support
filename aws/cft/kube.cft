@@ -93,7 +93,7 @@
               ]
             ]
           }
-        },
+        }}},
         "KUBE2": {
           "Type": "AWS::EC2::Instance",
           "Properties": {
@@ -184,9 +184,9 @@
                   "echo 'jonathan ALL=(ALL) NOPASSWD:ALL' | cat >> /etc/sudoers.d/admin-users\n",
                   "apt-get update -y\n"
                 ]
-                ] 
+              ] 
             }
-        },
+        }}},
         "KUBE3": {
           "Type": "AWS::EC2::Instance",
           "Properties": {
