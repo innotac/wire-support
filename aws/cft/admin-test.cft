@@ -17,7 +17,7 @@
           },
           {
             "Key": "FQDN",
-            "Value": "admintest.wire.uscis.dhs.gov"
+            "Value": "admintest.wire-innotac.com"
           }
         ],
         "NetworkInterfaces": [

@@ -7,7 +7,7 @@
         "AvailabilityZone": "us-east-1a",
         "DisableApiTermination": "true",
         "ImageId": "ami-0596162a6887bd8d0",
-        "InstanceType": "t3.2xlarge",
+        "InstanceType": "t3.xlarge",
         "KeyName": "innotac-wire",
         "Monitoring": "true",
         "Tags": [
@@ -102,7 +102,7 @@
             "AvailabilityZone": "us-east-1b",
             "DisableApiTermination": "true",
             "ImageId": "ami-0596162a6887bd8d0",
-            "InstanceType": "t3.2xlarge",
+            "InstanceType": "t3.xlarge",
             "KeyName": "innotac-wire",
             "Monitoring": "true",
             "Tags": [
@@ -197,7 +197,7 @@
             "AvailabilityZone": "us-east-1c",
             "DisableApiTermination": "true",
             "ImageId": "ami-0596162a6887bd8d0",
-            "InstanceType": "t3.2xlarge",
+            "InstanceType": "t3.xlarge",
             "KeyName": "innotac-wire",
             "Monitoring": "true",
             "Tags": [
@@ -212,7 +212,6 @@
             ],
             "NetworkInterfaces": [
             {
-              "AssociatePublicIpAddress": "false",
               "DeleteOnTermination": "true",
               "Description": "Primary network interface",
               "DeviceIndex": 0,
@@ -236,7 +235,7 @@
             }
           ],
           "UserData" : {
-            "Fn::Base64" : {
+            "Fn::Base64" :{
               "Fn::Join" : [ "", [
                 "#!/bin/bash -v\n",
                 "adduser wire\n",

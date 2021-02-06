@@ -22,7 +22,6 @@
         ],
         "NetworkInterfaces": [
           {
-            "AssociatePublicIpAddress": "false",
             "DeleteOnTermination": "true",
             "Description": "Primary network interface",
             "DeviceIndex": 0,
@@ -118,7 +117,6 @@
         ],
         "NetworkInterfaces": [
           {
-            "AssociatePublicIpAddress": "false",
             "DeleteOnTermination": "true",
             "Description": "Primary network interface",
             "DeviceIndex": 0,
@@ -214,7 +212,6 @@
         ],
         "NetworkInterfaces": [
           {
-            "AssociatePublicIpAddress": "false",
             "DeleteOnTermination": "true",
             "Description": "Primary network interface",
             "DeviceIndex": 0,

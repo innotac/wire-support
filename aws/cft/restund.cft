@@ -13,11 +13,11 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "restund-1"
+            "Value": "restund01"
           },
           {
             "Key": "FQDN",
-            "Value": "restund1.wire.uscis.dhs.gov"
+            "Value": "restund01.wire-innotac.com"
           }
         ],
         "NetworkInterfaces": [
@@ -64,11 +64,11 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "restund-2"
+            "Value": "restund02"
           },
           {
             "Key": "FQDN",
-            "Value": "restund2.wire.uscis.dhs.gov"
+            "Value": "restund02.wire-innotac.comv"
           }
         ],
         "NetworkInterfaces": [

@@ -13,19 +13,19 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "elastic-1"
+            "Value": "elastic01"
           },
           {
             "Key": "FQDN",
-            "Value": "elastic1.wire.uscis.dhs.gov"
+            "Value": "elastic1.wire-innotac.com"
           }
         ],
         "NetworkInterfaces": [
           {
-            "AssociatePublicIpAddress": "false",
             "DeleteOnTermination": "true",
             "Description": "Primary network interface",
             "DeviceIndex": 0,
+            "PrivateIpAddress": "172.31.48.12",            
             "SubnetId": "subnet-c9e667e2",
              "GroupSet": [
                "sg-0a91ba353bf063c75",
@@ -46,10 +46,11 @@
           ],
           "UserData" : { "Fn::Base64" : { "Fn::Join" : [ ",", [
             "#!/bin/bash -v\n",
-            "sudo hostnamectl set-hostname elastic1.wire.innotac.com\n",
+            "sudo hostnamectl set-hostname elastic01.wire-innotac.com\n",
             "sudo groupadd wire\n",
             "sudo adduser wire\n",
-            "echo 'Hello World'" ]]}}
+            "echo 'Hello World'" 
+        ]]}}
       }
     },
     "ELASTIC2": {
@@ -64,19 +65,19 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "elastic-2"
+            "Value": "elastic02"
           },
           {
             "Key": "FQDN",
-            "Value": "elastic2.wire.uscis.dhs.gov"
+            "Value": "elastic02.wire-innotac.com"
           }
         ],
         "NetworkInterfaces": [
           {
-            "AssociatePublicIpAddress": "false",
             "DeleteOnTermination": "true",
             "Description": "Primary network interface",
             "DeviceIndex": 0,
+            "PrivateIpAddress": "172.31.0.12",
             "SubnetId": "subnet-190d766e",
              "GroupSet": [
                "sg-0a91ba353bf063c75",
@@ -97,11 +98,64 @@
           ],
           "UserData" : { "Fn::Base64" : { "Fn::Join" : [ ",", [
             "#!/bin/bash -v\n",
-            "sudo hostnamectl set-hostname elastic2.wire.innotac.com\n",
+            "sudo hostnamectl set-hostname elastic02.wire-innotac.com\n",
             "sudo groupadd wire\n",
             "sudo adduser wire\n",
-            "echo 'Hello World'" ]]}}
+            "echo 'Hello World'" 
+        ]]}}
       }
-    }
+    },
+    "ELASTIC3": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "AvailabilityZone": "us-east-1c",
+        "DisableApiTermination": "true",
+        "ImageId": "ami-0596162a6887bd8d0",
+        "InstanceType": "t3.small",
+        "KeyName": "innotac-wire",
+        "Monitoring": "true",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "elastic03"
+          },
+          {
+            "Key": "FQDN",
+            "Value": "elastic03.wire-innotac.com"
+          }
+        ],
+        "NetworkInterfaces": [
+          {
+            "DeleteOnTermination": "true",
+            "Description": "Primary network interface",
+            "DeviceIndex": 0,
+            "PrivateIpAddress": "172.31.16.12",
+            "SubnetId": "subnet-e027b8b9",
+             "GroupSet": [
+               "sg-0a91ba353bf063c75",
+               "sg-0bdb3dbf9334e48d0"
+             ]
+           }
+         ],
+         "BlockDeviceMappings": [
+           {
+             "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "VolumeType": "gp2",
+                "VolumeSize": "60",
+                "DeleteOnTermination":"true",
+                "Encrypted": "true"
+              }
+            }
+          ],
+          "UserData" : { "Fn::Base64" : { "Fn::Join" : [ ",", [
+            "#!/bin/bash -v\n",
+            "sudo hostnamectl set-hostname elastic02.wire-innotac.com\n",
+            "sudo groupadd wire\n",
+            "sudo adduser wire\n",
+            "echo 'Hello World'"
+        ]]}}
+      }
+    },
   }
 }

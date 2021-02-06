@@ -17,12 +17,11 @@
           },
           {
             "Key": "FQDN",
-            "Value": "asset.wire.uscis.dhs.gov"
+            "Value": "asset.wire-innotac.com"
           }
         ],
         "NetworkInterfaces": [
           {
-            "AssociatePublicIpAddress": "false",
             "DeleteOnTermination": "true",
             "Description": "Primary network interface",
             "DeviceIndex": 0,
