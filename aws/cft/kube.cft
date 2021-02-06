@@ -17,7 +17,7 @@
           },
           {
             "Key": "FQDN",
-            "Value": "kube01.wire.uscis.dhs.gov"
+            "Value": "kube01.wire-innotac.com"
           }
         ],
         "NetworkInterfaces": [
@@ -93,7 +93,9 @@
               ]
             ]
           }
-        }}},
+        }
+      }
+    },
         "KUBE2": {
           "Type": "AWS::EC2::Instance",
           "Properties": {
@@ -110,7 +112,7 @@
               },
               {
                 "Key": "FQDN",
-                "Value": "kube02.wire.uscis.dhs.gov"
+                "Value": "kube02.wire-innotac.com"
               }
             ],
             "NetworkInterfaces": [
@@ -186,7 +188,9 @@
                 ]
               ] 
             }
-        }}},
+        }
+      }
+    },
         "KUBE3": {
           "Type": "AWS::EC2::Instance",
           "Properties": {
@@ -203,7 +207,7 @@
               },
               {
                 "Key": "FQDN",
-                "Value": "kube03.wire.uscis.dhs.gov"
+                "Value": "kube03.wire-innotac.comv"
               }
             ],
             "NetworkInterfaces": [
