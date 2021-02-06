@@ -1,0 +1,55 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "ASSET1": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "AvailabilityZone": "us-east-1a",
+        "DisableApiTermination": "true",
+        "ImageId": "ami-0596162a6887bd8d0",
+        "InstanceType": "t3.large",
+        "KeyName": "innotac-wire",
+        "Monitoring": "true",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "asset"
+          },
+          {
+            "Key": "FQDN",
+            "Value": "asset.wire.uscis.dhs.gov"
+          }
+        ],
+        "NetworkInterfaces": [
+          {
+            "AssociatePublicIpAddress": "false",
+            "DeleteOnTermination": "true",
+            "Description": "Primary network interface",
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-c9e667e2",
+             "GroupSet": [
+               "sg-0ccd0afc717e89fc5"
+             ]
+           }
+         ],
+         "BlockDeviceMappings": [
+           {
+             "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "VolumeType": "gp2",
+                "VolumeSize": "100",
+                "DeleteOnTermination":"true",
+                "Encrypted": "true"
+              }
+            }
+          ],
+          "UserData" : { "Fn::Base64" : { "Fn::Join" : [ ",", [
+            "#!/bin/bash -v\n",
+            "sudo hostnamectl set-hostname asset.wire.innotac.com\n",
+            "sudo groupadd wire\n",
+            "sudo adduser wire\n",
+            "echo 'Hello World'" ]]}}
+      }
+    }
+  }
+}
